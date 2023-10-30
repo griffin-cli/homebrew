@@ -35,6 +35,16 @@ on:
         type: boolean
         default: false
 
+      git_email:
+        required: false
+        type: string
+        default: griffin-cli@users.noreply.github.com
+
+      git_name:
+        required: false
+        type: string
+        default: Griffin CLI
+
 
 jobs:
   update-formula:
@@ -79,6 +89,9 @@ jobs:
 
       - name: Push Changes
         run: |
+          git config --global user.email ${{ inputs.git_email }}
+          git config --global user.name ${{ inputs.git_name }}
+
           git add Formula
           git diff
           git commit -m "griffin ${{ inputs.version }}"
