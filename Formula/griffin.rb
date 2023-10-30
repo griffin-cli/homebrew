@@ -8,23 +8,23 @@ class Griffin < Formula
   version "v0.1.2"
 
   url "https://github.com/griffin-cli/griffin-cli/releases/download/v0.1.2/griffin-v0.1.2-darwin-x64.tar.xz"
-  sha256 "f12af732baf4d99998cb238543a424314feaedb0d0a2cfdd4e0900ee8235612a"
+  sha256 "9a6d0ad65b4c7118cbad51c73b9dcbed3cbea26b236950056a7db823bbbd76e7"
 
   on_macos do
     on_arm do
       url "https://github.com/griffin-cli/griffin-cli/releases/download/v0.1.2/griffin-v0.1.2-darwin-arm64.tar.xz"
-      sha256 "07e371f9eb9346151cda372648a7b2cc98f22bb33ab65a1d5b5cc4a945f26824"
+      sha256 "dd63d9a6ca74683250d94dbbf8a5d57e91e4fc7237074e8a32d1344758bfd78a"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/griffin-cli/griffin-cli/releases/download/v0.1.2/griffin-v0.1.2-linux-x64.tar.xz"
-      sha256 "ad31c620920696d24c705b7572275efbda6347cc2ecd354945ec2a7b29980ca3"
+      sha256 "eabeb06ccf3f49da747888aa74a22dc3d6c1e55d28c983b08352f640a05c2152"
     end
     on_arm do
       url "https://github.com/griffin-cli/griffin-cli/releases/download/v0.1.2/griffin-v0.1.2-linux-arm64.tar.xz"
-      sha256 "1e09483828d5615600b51318d2dac1be8ac31bd11189320dfbc085d3ae789ded"
+      sha256 "92512c4598f89c2894875b404c0979b4fe10752c34375e146561c98f38314dc4"
     end
   end
 
@@ -32,15 +32,16 @@ class Griffin < Formula
     inreplace "bin/griffin", /^CLIENT_HOME=/, "export GRIFFIN_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
     libexec.install Dir["*"]
     bin.install_symlink libexec/"bin/griffin"
-
-    bash_completion.install libexec/"autocomplete-scripts/brew/bash" => "griffin"
-    zsh_completion.install libexec/"autocomplete-scripts/brew/zsh/_griffin"
   end
 
   def caveats; <<~EOS
-    To use autocomplete run
+    Enable autocomplete for zsh by running
 
-      $ griffin autocomplete --refresh-cache
+      $ griffin autocomplete zsh
+
+    If you're using bash, run
+
+      $ griffin autocomplete bash
   EOS
   end
 
