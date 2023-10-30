@@ -48,7 +48,7 @@ jobs:
 
       - name: Update Formula
         run: |
-          rm -f Formula/griffin.rb
+          rm -f Formula/griffin.rb || true
 
           BASE_URL=${{ inputs.base_url }}/${{ inputs.version }}/griffin-${{ inputs.version }}
           EXT=tar.xz
