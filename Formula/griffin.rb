@@ -29,7 +29,7 @@ class Griffin < Formula
   end
 
   def install
-    inreplace "bin/griffin", /^CLIENT_HOME=/, "export GRIFFIN_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
+    inreplace "bin/griffin", /^CLIENT_HOME=/, "export GRIFFIN_OCLIF_CLIENT_HOME=#{libexec/"dist"}\nCLIENT_HOME="
     libexec.install Dir["*"]
     bin.install_symlink libexec/"bin/griffin"
   end
