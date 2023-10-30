@@ -48,7 +48,13 @@ jobs:
 
       - name: Update Formula
         run: |
-          rm -f Formula/griffin.rb || true
+          echo "Deleting old formula..."
+          rm -f Formula/griffin.rb
+          echo "Successfully deleted old formula."
+
+          echo "Creating Formula directory..."
+          mkdir -p Formula
+          echo "Successfully created Formula directory."
 
           BASE_URL=${{ inputs.base_url }}/${{ inputs.version }}/griffin-${{ inputs.version }}
           EXT=tar.xz
@@ -67,7 +73,9 @@ jobs:
           export DOWNLOAD_URL_LINUX_ARM=$BASE_URL-linux-arm64.$EXT
           export SHA256_LINUX_ARM=${{ inputs.sha256_linux_arm }}
 
+          echo "Writing updated formula..."
           envsubst < ./templates/griffin.rb > ./Formula/griffin.rb
+          echo "Successfully wrote updated formula."
 
       - name: Push Changes
         run: |
