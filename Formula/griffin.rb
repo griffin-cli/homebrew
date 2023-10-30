@@ -32,15 +32,16 @@ class Griffin < Formula
     inreplace "bin/griffin", /^CLIENT_HOME=/, "export GRIFFIN_OCLIF_CLIENT_HOME=#{lib/"client"}\nCLIENT_HOME="
     libexec.install Dir["*"]
     bin.install_symlink libexec/"bin/griffin"
-
-    bash_completion.install libexec/"autocomplete-scripts/brew/bash" => "griffin"
-    zsh_completion.install libexec/"autocomplete-scripts/brew/zsh/_griffin"
   end
 
   def caveats; <<~EOS
-    To use autocomplete run
+    Enable autocomplete for zsh by running
 
-      $ griffin autocomplete --refresh-cache
+      $ griffin autocomplete zsh
+
+    If you're using bash, run
+
+      $ griffin autocomplete bash
   EOS
   end
 
