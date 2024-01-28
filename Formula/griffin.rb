@@ -5,26 +5,26 @@ class Griffin < Formula
   homepage "https://github.com/griffin-cli/griffin-cli"
   version_scheme 1
 
-  version "v1.0.1"
+  version "v1.0.2"
 
-  url "https://github.com/griffin-cli/griffin-cli/releases/download/v1.0.1/griffin-v1.0.1-darwin-x64.tar.xz"
-  sha256 "137a93d9fd174d2d296505897648eb7755d936d88b5e33906e20ffa445fa2c36"
+  url "https://github.com/griffin-cli/griffin-cli/releases/download/v1.0.2/griffin-v1.0.2-darwin-x64.tar.xz"
+  sha256 "f92935a5a8b55434df64fc71d09584da9690613500f1f2cb7d63517fc32e9cda"
 
   on_macos do
     on_arm do
-      url "https://github.com/griffin-cli/griffin-cli/releases/download/v1.0.1/griffin-v1.0.1-darwin-arm64.tar.xz"
-      sha256 "1f71ea4d08fe9efc07796f5b3597c142a7d44932becc99f4a420f1ec3cd886af"
+      url "https://github.com/griffin-cli/griffin-cli/releases/download/v1.0.2/griffin-v1.0.2-darwin-arm64.tar.xz"
+      sha256 "959e47678a252be09217991376565a05d668e5b4e1814d563453a61662afc535"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/griffin-cli/griffin-cli/releases/download/v1.0.1/griffin-v1.0.1-linux-x64.tar.xz"
-      sha256 "0ff693c2161ca27d019c5592712485965a9d7e4896931c0a4170cea7f88a6e64"
+      url "https://github.com/griffin-cli/griffin-cli/releases/download/v1.0.2/griffin-v1.0.2-linux-x64.tar.xz"
+      sha256 "687961428b933a2ea5982048c2de992c8bce10e3d711390f9629b76dac3562a2"
     end
     on_arm do
-      url "https://github.com/griffin-cli/griffin-cli/releases/download/v1.0.1/griffin-v1.0.1-linux-arm64.tar.xz"
-      sha256 "8e47028a7348aaa98413fb56482e1834ddf504cacffc5c451c14056a021cb5b2"
+      url "https://github.com/griffin-cli/griffin-cli/releases/download/v1.0.2/griffin-v1.0.2-linux-arm64.tar.xz"
+      sha256 "cca4b3f07af600b81d5580a6858cffce29fc323e15dd790358fb98feb41f6bfe"
     end
   end
 
